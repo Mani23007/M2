@@ -126,8 +126,6 @@ int main()
 Thus the program to perform addition and subtraction of two numbers using functions has been executed successfully
  
  
-
-
 # EX-09-Use For Loop
 
 ## AIM:
@@ -144,21 +142,40 @@ Write a c program to find the sum of odd digits using for loop
 6.	Print the sum of odd digits.
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
 
+int main() {
+    int num, digit, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    int temp = num;
+    for (; temp != 0; temp /= 10) {
+        digit = temp % 10;
+
+
+        if (digit % 2 != 0) {
+            sum += digit;
+        }
+    }
+
+    printf("Sum of odd digits in %d = %d\n", num, sum);
+    
+    return 0;
+}
+~~~
 
 ## OUTPUT:
-
-
-
+![image](https://github.com/user-attachments/assets/e1b7ca50-e9b9-4164-b80f-3c83acf078b9)
 
 ## RESULT:
 
 Thus the program to find the sum of odd digits using for loop has been executed successfully.
 
 
-
-
 # EX – 10 - Factorial of a Number Using a Function
+
 ## AIM:
 To write a C program that calculates the factorial of a given number using a user-defined function.
 ## ALGORITHM:
@@ -174,9 +191,37 @@ d.	After the loop, print the factorial value.
 5.	End
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
+int factorial(int n) {
+    int fact = 1;
 
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    return fact;
+}
+
+int main() {
+    int num;
+
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        int result = factorial(num);
+        printf("Factorial of %d is %d\n", num, result);
+    }
+
+    return 0;
+}
+~~~
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/1cde3807-7570-40e0-b46d-023bf816dbed)
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
